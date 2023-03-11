@@ -1,27 +1,20 @@
-import React from 'react';
-import './App.scss';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
-interface Props {
-  onClick: () => void;
-}
+import { TodoApp } from './components/TodoApp/TodoApp';
+import { AuthProvider } from './components/Auth/AuthContext';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
+export const App = () => {
+  const location = useLocation().pathname;
+  const checkStatus = location === '/active' || location === '/completed';
 
-export const App: React.FC = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
-    </div>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<TodoApp />} />
+        {checkStatus && <Route path=":status" element={<TodoApp />} />}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </AuthProvider>
   );
 };

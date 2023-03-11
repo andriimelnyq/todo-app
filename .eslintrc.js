@@ -8,6 +8,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/self-closing-comp': 0,
     'react/display-name': 0,
+    'react/react-in-jsx-scope': 'off',
 
     // JavaScript
     semi: 0,
@@ -20,6 +21,16 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/ban-types': 0,
     '@typescript-eslint/semi': ['error'],
+
+    'max-len': ['error', {
+      ignoreTemplateLiterals: true,
+      ignoreComments: true,
+    }],
+    'jsx-a11y/label-has-associated-control': ['error', {
+      assert: 'either',
+    }],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'off',
   },
   parser: '@typescript-eslint/parser',
   plugins: [
