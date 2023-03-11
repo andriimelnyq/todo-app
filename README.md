@@ -1,7 +1,7 @@
 # ToDo App
-What is a ToDo App? The definition is a simple one. It's a list of tasks you need to complete or things you want to do. You can control your todos (add, edit, delete, toggle the completed) and filter the whole list.
-
 [DEMO](https://andriimelnyq.github.io/todo-app/)
+
+What is a ToDo App? The definition is a simple one. It's a list of tasks you need to complete or things you want to do. You can control your todos (add, edit, delete, toggle the completed) and filter the whole list.
 
 ![todoapp](./description/todoapp.gif)
 ![todoedit](./description/edittodo.gif)
